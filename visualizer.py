@@ -35,6 +35,10 @@ def explore(df):
     #Using the pandas profiler(Profile Report)
     pr = ProfileReport(df, explorative=True)
     st_profile_report(pr)
+    download=st.button('Download Profile Report')
+    if download:
+        profile.to_file("Analysis.html")
+    
 st.cache(ttl=60)
 def get_df(file):
     time.sleep(2)
@@ -74,9 +78,5 @@ def main():
     st.write('Fraudulent transactions are: %.3f%%'%outlier_percentage)
     st.write('Fraud Cases: ',len(fraud))
     st.write('Valid Cases: ',len(valid))
-    
-    download=st.button('Download Profile Report')
-    if download:
-        profile.to_file("Analysis.html")
     
 main()
