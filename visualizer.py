@@ -1,6 +1,7 @@
 import pandas as pd 
-import pyarrow as pa
+from pyarrow import csv
 import streamlit as st 
+import pyarrow.parquet as pq
 import matplotlib.pyplot as plt 
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
@@ -61,7 +62,7 @@ def main():
         return
 
     df = get_df(file)
-    data = pa.read_csv(df, read_options=None, Parse_options=None, convert_options=None, MemoryPool memory_pool=None)
+    data = csv.read_csv(df)
     #st.subheader('Map of the data')
     #st.map(df)
     explore(data)
