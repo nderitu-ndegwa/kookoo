@@ -1,4 +1,5 @@
 import pandas as pd 
+import pyarrow as pa
 import streamlit as st 
 import matplotlib.pyplot as plt 
 from pandas_profiling import ProfileReport
@@ -60,7 +61,7 @@ def main():
         return
 
     df = get_df(file)
-    data = pyarrow.csv.read_csv(df, read_options=None, Parse_options=None, convert_options=None, MemoryPool memory_pool=None)
+    data = pa.read_csv(df, read_options=None, Parse_options=None, convert_options=None, MemoryPool memory_pool=None)
     #st.subheader('Map of the data')
     #st.map(df)
     explore(data)
