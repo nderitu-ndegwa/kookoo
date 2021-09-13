@@ -63,9 +63,9 @@ def main():
         return
 
     df = get_df(file)
-    data = csv.read_csv(df)
+    #data = csv.read_csv(df)
     #st.subheader('Map of the data')
     #st.map(df)
-    explore(data)
+    explore(df)
 
 main()
