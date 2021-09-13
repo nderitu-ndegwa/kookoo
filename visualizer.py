@@ -76,5 +76,7 @@ def main():
     st.write('Valid Cases: ',len(valid))
     
     download=st.button('Download Profile Report')
+    if download:
+        profile.to_file("Analysis.html")
     
 main()
