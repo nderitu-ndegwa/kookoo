@@ -53,7 +53,7 @@ def get_df(file):
 
 def main():
     #st.title("Credit Card Fraud Detection and visualization")
-
+    time.sleep(5)
     file = st.file_uploader("Upload dataset in .csv or .xlsx format", type=['csv', 'xlsx'], key = "1")
     st.write(file)
 
