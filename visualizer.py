@@ -37,7 +37,7 @@ def explore(df):
     st_profile_report(pr)
     download=st.button('Download Profile Report')
     if download:
-        profile.to_file("Analysis.html")
+        pr.to_file("Analysis.html")
     
 st.cache(ttl=60)
 def get_df(file):
