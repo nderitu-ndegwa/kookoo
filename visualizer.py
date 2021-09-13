@@ -75,4 +75,6 @@ def main():
     st.write('Fraud Cases: ',len(fraud))
     st.write('Valid Cases: ',len(valid))
     
+    download=st.button('Download Profile Report')
+    
 main()
