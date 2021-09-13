@@ -36,18 +36,17 @@ def explore(df):
     pr = ProfileReport(df, explorative=True)
     st_profile_report(pr)
 
-@st.cache(ttl=30)
 def get_df(file):
     time.sleep(2)
     # get extension and read file
     extension = file.name.split('.')[1]
 
     if extension.upper() == 'CSV':
-        df = pd.read_csv(file)
+        df = st.cache(pd.read_csv(file))
     elif extension.upper() == 'XLSX':
-        df = pd.read_excel(file, engine='openpyxl')
+        df = st.cache(pd.read_excel(file, engine='openpyxl'))
     elif extension.upper() == 'PICKLE':
-        df = pd.read_pickle(file)  
+        df = st.cache(pd.read_pickle(file))  
     
     return df
 
@@ -67,5 +66,13 @@ def main():
     #st.subheader('Map of the data')
     #st.map(df)
     explore(df)
-
+    
+    fraud=df[df.Class==1]
+    valid=df[df.Class==0]
+    outlier_percentage=(df.Class.value_counts()[1]/df.Class.value_counts()[0])*100
+    
+    st.write('Fraudulent transactions are: %.3f%%'%outlier_percentage)
+    st.write('Fraud Cases: ',len(fraud))
+    st.write('Valid Cases: ',len(valid))
+    
 main()
