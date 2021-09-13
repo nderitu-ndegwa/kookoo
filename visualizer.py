@@ -1,6 +1,7 @@
+import time
 import pandas as pd 
-from pyarrow import csv
 import streamlit as st 
+from pyarrow import csv
 import pyarrow.parquet as pq
 import matplotlib.pyplot as plt 
 from pandas_profiling import ProfileReport
