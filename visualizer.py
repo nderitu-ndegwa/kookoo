@@ -33,9 +33,9 @@ def explore(df):
     pr = ProfileReport(df, explorative=True)
     st_profile_report(pr)
 
-@st.cache
+@st.cache(ttl=30)
 def get_df(file):
-
+    time.sleep(2)
     # get extension and read file
     extension = file.name.split('.')[1]
 
@@ -60,8 +60,9 @@ def main():
         return
 
     df = get_df(file)
+    data = pyarrow.csv.read_csv(df, read_options=None, Parse_options=None, convert_options=None, MemoryPool memory_pool=None)
     #st.subheader('Map of the data')
     #st.map(df)
-    explore(df)
+    explore(data)
 
 main()
