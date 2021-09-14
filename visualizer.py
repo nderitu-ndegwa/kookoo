@@ -35,9 +35,8 @@ def explore(df):
     #Using the pandas profiler(Profile Report)
     pr = ProfileReport(df, explorative=True)
     st_profile_report(pr)
-    download=st.button('Download Profile Report')
-    if download:
-        pr.to_file("Analysis.html")
+    #download=st.button('Download Profile Report')
+    pr.to_file("Analysis.html")
     
 #st.cache()
 @st.cache(persist=False,
@@ -61,7 +60,7 @@ def get_df(file):
 
 def main():
     #st.title("Credit Card Fraud Detection and visualization")
-    time.sleep(5)
+    time.sleep(2)
     file = st.file_uploader("Upload dataset in .csv or .xlsx format", type=['csv', 'xlsx'], key = "1")
     st.write(file)
 
