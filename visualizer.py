@@ -8,7 +8,7 @@ st.title("Credit Card Fraud Detection & Visualization")
 
 @st.cache(allow_output_mutation=True)
 def load_data(file):
-    df = pd.read_csv(file, encoding = "ISO-8859-1")
+    df = pd.read_csv(file)
     return df
 
 st.sidebar.title("Upload data")    
@@ -40,5 +40,5 @@ if uploaded_file is not None:
         st.write("Selected option: Explorative. This mode might be computationally expensive. Please consider using Minimal if you are experiencing poor service quality.")
         pr = ProfileReport(df, title="Statistical Profile Report", explorative=True)
 
-    st.title("Pandas Profiling in Streamlit")
+    st.title("Statistical Profile Report")
     st_profile_report(pr)
