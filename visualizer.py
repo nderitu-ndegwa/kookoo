@@ -8,7 +8,7 @@ st.title("Credit Card Fraud Detection & Visualization")
 
 @st.cache(allow_output_mutation=True)
 def load_data(file):
-    df = pd.read_csv(file)
+    df = pd.read_csv(file, encoding = "ISO-8859-1")
     return df
 
 st.sidebar.title("Upload data")    
