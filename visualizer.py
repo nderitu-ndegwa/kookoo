@@ -39,7 +39,12 @@ def explore(df):
     if download:
         pr.to_file("Analysis.html")
     
-st.cache
+#st.cache()
+@st.cache(persist=False,
+          allow_output_mutation=True,
+          suppress_st_warning=True,
+          show_spinner= True)
+          #ttl = 60)
 def get_df(file):
     time.sleep(2)
     # get extension and read file
