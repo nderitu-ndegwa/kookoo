@@ -23,17 +23,20 @@ if uploaded_file is None:
 
 if uploaded_file is not None:
     df = load_data(uploaded_file)
-    st.write(file)
+    st.write('data')
+    st.write(df)
     if option == "Default":
         pr = ProfileReport(df, title="Statistical Profile Report")
 
     if option == "Minimal":
-        st.write(file)
+        st.write('data')
+        st.write(df)
         st.write("Selected option: Minimal. Please consider using Explorative if further exploration is required.")
         pr = ProfileReport(df, title="Statistical Profile Report", minimal=True)
 
     if option == "Explorative":
-        st.write(file)
+        st.write('data')
+        st.write(df)
         st.write("Selected option: Explorative. This mode might be computationally expensive. Please consider using Minimal if you are experiencing poor service quality.")
         pr = ProfileReport(df, title="Statistical Profile Report", explorative=True)
 
