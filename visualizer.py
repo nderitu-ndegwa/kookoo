@@ -4,6 +4,7 @@ from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 
 st.set_page_config(layout='wide')
+st.title("Credit Card Fraud Detection & Visualization")
 
 @st.cache(allow_output_mutation=True)
 def load_data(file):
@@ -23,14 +24,14 @@ if uploaded_file is None:
 if uploaded_file is not None:
     df = load_data(uploaded_file)   
     if option == "Default":
-        pr = ProfileReport(df, title="Pandas Profiling Report")
+        pr = ProfileReport(df, title="Statistical Profile Report")
 
     if option == "Minimal":
         st.write("Selected option: Minimal. Please consider using Explorative if further exploration is required.")
         pr = ProfileReport(df, title="Pandas Profiling Report", minimal=True)
 
     if option == "Explorative":
-        st.write("Selected option: Explorative. This mode might be computationally expensive. Please consider using Minimal if you are experiencing problems.")
+        st.write("Selected option: Explorative. This mode might be computationally expensive. Please consider using Minimal if you are experiencing poor service quality.")
         pr = ProfileReport(df, title="Pandas Profiling Report", explorative=True)
 
     st.title("Pandas Profiling in Streamlit")
