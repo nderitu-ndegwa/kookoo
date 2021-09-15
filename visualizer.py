@@ -6,7 +6,7 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 st.set_page_config(layout="wide")
-st.title("Credit Card Fraud Detection and visaulization")
+st.title("Credit Card Fraud Detection & visaulization")
 
 #Exploration function(numerical summary)
 def explore(df):
@@ -57,7 +57,7 @@ option = st.selectbox(
 ('Minimal', 'Explorative', 'Default'))
 
 if file is None:
-    st.write("Please upload your data from the left panel")
+    st.write("Please upload your data from the above panel")
 
 if file is not None:
     df = get_df(file)
