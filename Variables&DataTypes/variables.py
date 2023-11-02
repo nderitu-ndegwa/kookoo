@@ -7,7 +7,7 @@ price = 9.99
 print(price)  # Output: 9.99
 
 # String variable
-name = "John"
+name = "Vincent"
 print(name)  # Output: John
 
 # Boolean variable
@@ -15,7 +15,7 @@ is_student = True
 print(is_student)  # Output: True
 
 # List variable
-fruits = ["apple", "banana", "cherry"]
+fruits = ["apple", "banana", "passion"]
 print(fruits)  # Output: ['apple', 'banana', 'cherry']
 
 # Tuple variable
@@ -23,7 +23,7 @@ coordinates = (10, 20)
 print(coordinates)  # Output: (10, 20)
 
 # Dictionary variable
-person = {"name": "John", "age": 25, "is_student": True}
+person = {"name": "Vincent", "age": 25, "is_student": True}
 print(person)  # Output: {'name': 'John', 'age': 25, 'is_student': True}
 
 # Set variable
