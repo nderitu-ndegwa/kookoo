@@ -19,10 +19,26 @@ import re
 string = "Python is fun, but it is also cool"
 obj = re.findall(r'\w*', string)
 print(obj)
-"""
+
 
 #Using the re.sub function example
 import re
 string = "Python is fun, but it is also cool"
 obj = re.sub(r'Python', 'Java', string)
 print(obj)
+
+
+#Using the re.compile function example
+import re
+string = "Python is fun, but it is also cool"
+pattern = re.compile(r'Python')
+obj = pattern.match(string)
+obj = pattern.search(string)
+print(obj.start(), obj.end())
+
+obj = pattern.findall(string)
+print(obj)
+
+obj = pattern.sub('Java', string)
+print(obj)
+"""
