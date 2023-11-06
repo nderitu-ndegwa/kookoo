@@ -1,4 +1,3 @@
-"""
 #Using the re.match function example
 import re
 line = "Cats are smarter than dogs"
@@ -41,4 +40,17 @@ print(obj)
 
 obj = pattern.sub('Java', string)
 print(obj)
-"""
+
+
+#Using the re.finditer function example
+import re
+string = "Python is fun, but it is also cool"
+pattern = re.compile(r'is')
+iterator = pattern.finditer(string)
+for obj in iterator:
+    print(obj.start(), obj.end())
+    print(obj.group())
+print(iterator)
+
+for match in iterator:
+    print(match.span())
