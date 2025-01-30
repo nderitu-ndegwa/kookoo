@@ -25,11 +25,8 @@ def explore(df):
     df_types['Median'] = df[numerical_cols].median()
     df_types['St. Dev.'] = df[numerical_cols].std()  
     
-    #st.write('Summary:')
-    #st.write(df_types)
-    #st.line_chart(df)
 
-    #Using the pandas profiler(Profile Report)
+    
     pr = ProfileReport(df, explorative=True)
     st_profile_report(pr)
 
@@ -48,7 +45,7 @@ def get_df(file):
     
     return df
 
-#st.title("Credit Card Fraud Detection and visualization")
+
 file = st.file_uploader("Upload dataset in .csv or .xlsx format", type=['csv', 'xlsx'], key = "1")
 st.write(file)
 
